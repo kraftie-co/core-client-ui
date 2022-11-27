@@ -1,3 +1,5 @@
 {
-  "HELLO": "Bună"
+  "DECREASE": "Scade",
+  "HELLO": "Bună",
+  "INCREASE": "Creşte"
 }

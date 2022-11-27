@@ -1,20 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { t } from 'i18next';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { counterActions } from '../../store/slices/counterSlice';
+import { useTheme } from 'styled-components';
+import Typography from '../../components-export/Typography';
 
 function Counter({ value, increase, decrease }) {
+  const theme = useTheme();
+
   return (
     <div>
-      <h1>{value}</h1>
-
-      <button onClick={increase} style={{ padding: '16px' }}>
-        Increase
+      <Typography>{value}</Typography>
+      <button onClick={increase} style={{ padding: theme.spacing05, color: theme.text01, ...theme.body }}>
+        {t('INCREASE')}
       </button>
-      <button onClick={decrease} style={{ padding: '16px' }}>
-        Decrease
+      <button onClick={decrease} style={{ padding: theme.spacing05, color: theme.text01, ...theme.body }}>
+        {t('DECREASE')}
       </button>
     </div>
   );
