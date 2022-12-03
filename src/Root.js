@@ -11,6 +11,7 @@ import themes from './components-export/Theme';
 import GlobalStyles from './globalStyles';
 import Home from './containers/Home';
 import ProductsPage from './containers/ProductsPage';
+import Login from './containers/Login';
 import Counter from './containers/Counter';
 
 import { store } from './store';
@@ -28,6 +29,7 @@ function Root({ locale, theme }) {
               <Route path="/" element={<Home />} />
               <Route path="/products" element={<ProductsPage />} />
               <Route path="/counter" element={<Counter />} />
+              <Route path="/login" element={<Login />} />
             </Routes>
           </BrowserRouter>
         </ThemeProvider>

@@ -55,6 +55,7 @@ const light = {
   ui03: '#e0e0e0',
   ui04: '#8d8d8d',
   ui05: '#161616',
+  ui06: '#73a7b6',
   textColor01: '#161616',
   textColor02: '#ffffff',
   textColor03: '#8d8d8d',
