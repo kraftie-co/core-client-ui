@@ -22,6 +22,12 @@
   width: 55vw;
 }
 
+.passwordButton {
+  margin-left: -4vw;
+  background: none;
+  border: none;
+}
+
 .button {
   border-radius: 2vh;
   border: 1px solid #034C65;
