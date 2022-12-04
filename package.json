@@ -52,6 +52,8 @@
     ]
   },
   "dependencies": {
+    "@mui/styled-engine-sc": "^5.10.16",
+    "@rebass/forms": "^4.0.6",
     "@reduxjs/toolkit": "^1.9.0",
     "i18next": "^22.0.6",
     "prop-types": "^15.8.1",

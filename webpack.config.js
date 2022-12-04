@@ -15,7 +15,7 @@ const getAddons = (addons = '') =>
     .map((name) => require(`./config/addons/webpack.${name}.js`));
 
 module.exports = ({ addon }) => {
-  const targetEnv = process.env.NODE_ENV || 'production';
+  const targetEnv = process.env.NODE_ENV || 'production' + " && ";
 
   const envConfig = require(`./config/webpack.${targetEnv}.js`);
 
