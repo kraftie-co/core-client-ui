@@ -1,18 +1,16 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import * as Styled from './Home.styled';
+import { load } from '../../utils/LocalStorage';
 
 function Home() {
   const { t } = useTranslation();
-  const isLoggedIn = localStorage.getItem('user-token');
-  const navigate = useNavigate();
+  const isLoggedIn = load('user-token');
 
   useEffect(() => {
-    if (!isLoggedIn) {
-      navigate('/login');
-    }
+    // TODO: Client should be able to access without user-token, meanwhile vendor should not
+    console.log(isLoggedIn);
   });
 
   return (

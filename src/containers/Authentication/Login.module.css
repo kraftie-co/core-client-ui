@@ -3,22 +3,15 @@
   background: linear-gradient(90deg, #f0f0f0 0%, #0b6884 33%, #0b6884 66%, #f0f0f0 100%);
   color: #f4f4f4;
   width: 75vw;
-  text-align: center;
   box-shadow: 10px 10px 10px lightgray;
 }
 
 .inputs {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-top: 20vh;
   height: 25vh;
   width: 50vw;
 }
 
 .passwordContainer {
-  display: flex;
-  flex-direction: row;
   width: 55vw;
 }
 
@@ -54,9 +47,5 @@
 }
 
 .footer {
-  margin-top: 10vh;
   height: 30vh;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
 }

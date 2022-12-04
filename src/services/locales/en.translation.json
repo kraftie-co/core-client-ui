@@ -1,5 +1,9 @@
 {
   "DECREASE": "Decrease",
   "HELLO": "Hello",
-  "INCREASE": "Increase"
+  "INCREASE": "Increase",
+  "HELLO_KRAFTER": "Hello, Krafter!",
+  "JOIN_US_KRAFTER": "Join us, Krafter!",
+  "LOGIN": "Login",
+  "REGISTER": "Register"
 }

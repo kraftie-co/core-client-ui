@@ -7,6 +7,8 @@ const spacing = {
   spacing06: '1.5rem',
   spacing07: '2rem',
   spacing08: '3rem',
+  spacing09: '6rem',
+  spacing10: '12rem',
 };
 
 // Inter
@@ -56,6 +58,7 @@ const light = {
   ui04: '#8d8d8d',
   ui05: '#161616',
   ui06: '#73a7b6',
+  ui07: '#034c65',
   textColor01: '#161616',
   textColor02: '#ffffff',
   textColor03: '#8d8d8d',

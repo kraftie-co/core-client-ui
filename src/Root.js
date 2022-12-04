@@ -11,7 +11,7 @@ import themes from './components-export/Theme';
 import GlobalStyles from './globalStyles';
 import Home from './containers/Home';
 import ProductsPage from './containers/ProductsPage';
-import { Login, Register } from './containers/Login';
+import { Login, Register } from './containers/Authentication';
 import Counter from './containers/Counter';
 
 import { store } from './store';

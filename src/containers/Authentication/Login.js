@@ -1,13 +1,17 @@
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import VisibilityIcon from '@material-ui/icons/Visibility';
+import { useTheme } from 'styled-components';
+import { Flex } from 'rebass';
 
 import * as Styled from './Login.styled';
-import styles from 'Login.module.css';
+import styles from './Login.module.css';
 
 function Login() {
   const { t } = useTranslation();
+  const theme = useTheme();
   const [passwordShown, setPasswordShown] = useState(false);
   const [usernameInput, setUsernameInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
@@ -29,17 +33,22 @@ function Login() {
 
   return (
     <Styled.LoginContainer>
-      <div className={styles.header}>
+      <Flex justifyContent={'center'} className={styles.header}>
         <h1>{t('Hello, Krafter!')}</h1>
-      </div>
-      <div className={styles.inputs}>
+      </Flex>
+      <Flex
+        flexDirection={'column'}
+        justifyContent={'space-between'}
+        className={styles.inputs}
+        style={{ marginTop: theme.spacing10 }}
+      >
         <input
           type={'text'}
           className={styles.input}
           onInput={(e) => setUsernameInput(e.target.value)}
           placeholder={'Username'}
         />
-        <div className={styles.passwordContainer}>
+        <Flex flexDirection={'row'} className={styles.passwordContainer}>
           <input
             type={passwordShown ? 'text' : 'password'}
             className={styles.input}
@@ -49,19 +58,24 @@ function Login() {
           <button className={styles.passwordButton} onClick={togglePassword}>
             <VisibilityIcon />
           </button>
-        </div>
-      </div>
-      <div className={styles.footer}>
+        </Flex>
+      </Flex>
+      <Flex
+        flexDirection={'column'}
+        justifyContent={'center'}
+        className={styles.footer}
+        style={{ marginTop: theme.spacing09 }}
+      >
         <button className={styles.button} onClick={loginRequest}>
           <p>{t('Login')}</p>
         </button>
         <h4>
-          {t('Do not have an account?')} <a href={'/register'}>{t('Register.')}</a>
+          {t('Do not have an account?')} <Link to={'/register'}>{t('Register.')}</Link>
         </h4>
         <h4>
-          {t('Forgot your password?')} <a href={'https://facebook.com'}>{t('Reset it.')}</a>
+          {t('Forgot your password?')} <Link to={'https://facebook.com'}>{t('Reset it.')}</Link>
         </h4>
-      </div>
+      </Flex>
     </Styled.LoginContainer>
   );
 }
