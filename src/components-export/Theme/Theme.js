@@ -11,6 +11,12 @@ const spacing = {
   spacing10: '12rem',
 };
 
+const sizing = {
+  sizeV01: '4vh',
+  sizeV02: '6vh',
+  sizeH01: '50vw',
+};
+
 // Inter
 const fonts = {
   body: {
@@ -59,6 +65,10 @@ const light = {
   ui05: '#161616',
   ui06: '#73a7b6',
   ui07: '#034c65',
+  ui08: '#0b6884',
+  // Hack for transparent color
+  ui09: 'rgba(255,255,255,0)',
+  ui10: '#ebfafe',
   textColor01: '#161616',
   textColor02: '#ffffff',
   textColor03: '#8d8d8d',
@@ -67,8 +77,8 @@ const light = {
 const dark = {};
 
 const themes = {
-  light: { ...light, ...spacing, ...fonts },
-  dark: { ...dark, ...spacing, ...fonts },
+  light: { ...light, ...spacing, ...fonts, ...sizing },
+  dark: { ...dark, ...spacing, ...fonts, ...sizing },
 };
 
 export default themes;

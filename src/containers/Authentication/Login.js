@@ -4,10 +4,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import { useTheme } from 'styled-components';
-import { Flex } from 'rebass';
+import { Flex, Button } from 'rebass';
+import Input from '../../components-export/Input/Input';
 
 import * as Styled from './Login.styled';
 import styles from './Login.module.css';
+import Typography from '../../components-export/Typography';
 
 function Login() {
   const { t } = useTranslation();
@@ -34,7 +36,7 @@ function Login() {
   return (
     <Styled.LoginContainer>
       <Flex justifyContent={'center'} className={styles.header}>
-        <h1>{t('Hello, Krafter!')}</h1>
+        <Typography otherProps={theme.title}>{t('HELLO_KRAFTER')}</Typography>
       </Flex>
       <Flex
         flexDirection={'column'}
@@ -42,22 +44,16 @@ function Login() {
         className={styles.inputs}
         style={{ marginTop: theme.spacing10 }}
       >
-        <input
-          type={'text'}
-          className={styles.input}
-          onInput={(e) => setUsernameInput(e.target.value)}
-          placeholder={'Username'}
-        />
+        <Input type={'text'} onInput={(e) => setUsernameInput(e.target.value)} placeholder={'Username'} />
         <Flex flexDirection={'row'} className={styles.passwordContainer}>
-          <input
-            type={passwordShown ? 'text' : 'password'}
-            className={styles.input}
-            onInput={(e) => setPasswordInput(e.target.value)}
+          <Input
             placeholder={'Password'}
+            type={passwordShown ? 'text' : 'password'}
+            onInput={(e) => setPasswordInput(e.target.value)}
           />
-          <button className={styles.passwordButton} onClick={togglePassword}>
+          <Button marginLeft={'-4vw'} bg={theme.ui09} color={theme.ui05} onClick={togglePassword}>
             <VisibilityIcon />
-          </button>
+          </Button>
         </Flex>
       </Flex>
       <Flex

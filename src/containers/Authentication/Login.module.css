@@ -15,12 +15,6 @@
   width: 55vw;
 }
 
-.passwordButton {
-  margin-left: -4vw;
-  background: none;
-  border: none;
-}
-
 .button {
   border-radius: 2vh;
   border: 1px solid #034C65;
@@ -29,21 +23,6 @@
   font-size: 1rem;
   box-shadow: 10px 10px 15px lightgray;
   margin-bottom: 10vh;
-}
-
-.input {
-  height: 6vh;
-  width: 50vw;
-  border: 1px solid #034C65;
-  border-radius: 2vh;
-  font-size: 1.5rem;
-  padding-left: 1vw;
-  padding-right: 1vw;
-  background-color: #EBFAFE;
-  box-shadow: 10px 10px 20px lightgray;
-}
-.input:focus {
-  outline: none;
 }
 
 .footer {
