@@ -4,11 +4,11 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import { useTheme } from 'styled-components';
-import { Flex, Button } from 'rebass';
+import { Flex, Box } from 'rebass';
 import Input from '../../components-export/Input/Input';
+import Button from '../../components-export/Button/Button';
 
 import * as Styled from './Login.styled';
-import styles from './Login.module.css';
 import Typography from '../../components-export/Typography';
 
 function Login() {
@@ -35,36 +35,43 @@ function Login() {
 
   return (
     <Styled.LoginContainer>
-      <Flex justifyContent={'center'} className={styles.header}>
-        <Typography otherProps={theme.title}>{t('HELLO_KRAFTER')}</Typography>
+      <Flex>
+        <Box textAlign={'center'} bg={theme.ui11} width={'75vw'} boxShadow={'10px 10px 10px lightgray'}>
+          <Typography otherProps={theme.title}>{t('HELLO_KRAFTER')}</Typography>
+        </Box>
       </Flex>
       <Flex
         flexDirection={'column'}
         justifyContent={'space-between'}
-        className={styles.inputs}
+        height={'25vh'}
+        width={'50vw'}
         style={{ marginTop: theme.spacing10 }}
       >
         <Input type={'text'} onInput={(e) => setUsernameInput(e.target.value)} placeholder={'Username'} />
-        <Flex flexDirection={'row'} className={styles.passwordContainer}>
+        <Flex flexDirection={'row'} width={'55vw'}>
           <Input
             placeholder={'Password'}
             type={passwordShown ? 'text' : 'password'}
             onInput={(e) => setPasswordInput(e.target.value)}
           />
-          <Button marginLeft={'-4vw'} bg={theme.ui09} color={theme.ui05} onClick={togglePassword}>
+          <Button
+            style={{
+              marginLeft: '-4vw',
+              backgroundColor: theme.ui09,
+              color: theme.ui05,
+              border: 'none',
+              boxShadow: 'none',
+            }}
+            onClick={togglePassword}
+          >
             <VisibilityIcon />
           </Button>
         </Flex>
       </Flex>
-      <Flex
-        flexDirection={'column'}
-        justifyContent={'center'}
-        className={styles.footer}
-        style={{ marginTop: theme.spacing09 }}
-      >
-        <button className={styles.button} onClick={loginRequest}>
+      <Flex flexDirection={'column'} justifyContent={'center'} height={'30vh'} style={{ marginTop: theme.spacing09 }}>
+        <Button style={{ marginBottom: '10vh' }} onClick={loginRequest}>
           <p>{t('Login')}</p>
-        </button>
+        </Button>
         <h4>
           {t('Do not have an account?')} <Link to={'/register'}>{t('Register.')}</Link>
         </h4>

@@ -13,7 +13,6 @@ const InputStyled = styled.input`
   &:focus {
     outline: none;
   }
-  ${({ otherProps }) => ({ ...otherProps })};
 `;
 
 export { InputStyled };

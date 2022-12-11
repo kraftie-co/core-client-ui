@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import { useTheme } from 'styled-components';
-import { Flex, Button } from 'rebass';
+import { Box, Flex } from 'rebass';
 
 import * as Styled from './Login.styled';
-import styles from './Login.module.css';
 import 'react-toastify/dist/ReactToastify.css';
 import Input from '../../components-export/Input/Input';
+import Button from '../../components-export/Button/Button';
 import Typography from 'Root/components-export/Typography';
 
 function Register() {
@@ -47,49 +47,65 @@ function Register() {
 
   return (
     <Styled.LoginContainer>
-      <Flex justifyContent={'center'} className={styles.header}>
-        <Typography otherProps={theme.title}>{t('JOIN_US_KRAFTER')}</Typography>
+      <Flex>
+        <Box textAlign={'center'} bg={theme.ui11} width={'75vw'} boxShadow={'10px 10px 10px lightgray'}>
+          <Typography otherProps={theme.title}>{t('JOIN_US_KRAFTER')}</Typography>
+        </Box>
       </Flex>
       <Flex
         flexDirection={'column'}
         justifyContent={'space-between'}
-        className={styles.inputs}
+        height={'25vh'}
+        width={'50vw'}
         style={{ marginTop: theme.spacing10 }}
       >
         <Input type={'text'} onInput={(e) => setUsernameInput(e.target.value)} placeholder={'Username'} />
-        <Flex flexDirection={'row'} className={styles.passwordContainer}>
+        <Flex flexDirection={'row'} width={'55vw'}>
           <Input
             placeholder={'Password'}
             type={passwordShown ? 'text' : 'password'}
             style={arePasswordsMatched ? { borderColor: 'red' } : { borderColor: theme.ui07 }}
             onInput={(e) => setPasswordInput(e.target.value)}
           />
-          <Button marginLeft={'-4vw'} bg={theme.ui09} color={theme.ui05} onClick={togglePassword}>
+          <Button
+            style={{
+              marginLeft: '-4vw',
+              backgroundColor: theme.ui09,
+              color: theme.ui05,
+              border: 'none',
+              boxShadow: 'none',
+            }}
+            onClick={togglePassword}
+          >
             <VisibilityIcon />
           </Button>
         </Flex>
-        <Flex flexDirection={'row'} className={styles.passwordContainer}>
+        <Flex flexDirection={'row'} width={'55vw'}>
           <Input
             placeholder={'Confirm Password'}
             type={passwordShown ? 'text' : 'password'}
             style={arePasswordsMatched ? { borderColor: 'red' } : { borderColor: theme.ui07 }}
             onInput={(e) => setConfirmPasswordInput(e.target.value)}
           />
-          <Button marginLeft={'-4vw'} bg={theme.ui09} color={theme.ui05} onClick={togglePassword}>
+          <Button
+            style={{
+              marginLeft: '-4vw',
+              backgroundColor: theme.ui09,
+              color: theme.ui05,
+              border: 'none',
+              boxShadow: 'none',
+            }}
+            onClick={togglePassword}
+          >
             <VisibilityIcon />
           </Button>
         </Flex>
         <ToastContainer position={'bottom-center'} />
       </Flex>
-      <Flex
-        flexDirection={'column'}
-        justifyContent={'center'}
-        className={styles.footer}
-        style={{ marginTop: theme.spacing09 }}
-      >
-        <button className={styles.button} onClick={registerRequest}>
+      <Flex flexDirection={'column'} justifyContent={'center'} height={'30vh'} style={{ marginTop: theme.spacing09 }}>
+        <Button style={{ marginBottom: '10vh' }} onClick={registerRequest}>
           <p>{t('Register')}</p>
-        </button>
+        </Button>
         <h4>
           {t('Already have an account?')} <Link to={'/login'}>{t('Login.')}</Link>
         </h4>
