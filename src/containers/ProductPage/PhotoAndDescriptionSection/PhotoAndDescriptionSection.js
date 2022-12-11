@@ -2,7 +2,7 @@ import React from 'react';
 import { Flex } from 'rebass';
 import testProduct from 'data/Product.js';
 
-function PhotoSection() {
+function PhotoAndDescriptionSection() {
   return (
     <Flex flexDirection="column" width="778px">
       <Flex height="370PX" backgroundColor="#EBFAFE" />
@@ -16,4 +16,4 @@ function PhotoSection() {
   );
 }
 
-export default PhotoSection;
+export default PhotoAndDescriptionSection;

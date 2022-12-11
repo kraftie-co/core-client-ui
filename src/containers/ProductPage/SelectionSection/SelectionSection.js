@@ -5,7 +5,7 @@ import ColorSelect from 'ColorSelect';
 import SizeSelect from 'SizeSelect';
 import { FaHeart } from 'react-icons/fa';
 
-function CostumiseSection() {
+function SelectionSection() {
   return (
     <Flex minHeight="170px" width="607px" marginLeft="52px" flexDirection="column">
       <Flex>
@@ -64,4 +64,4 @@ function CostumiseSection() {
   );
 }
 
-export default CostumiseSection;
+export default SelectionSection;
