@@ -30,7 +30,7 @@ function Root({ locale, theme }) {
               <Route path="/" element={<Home />} />
               <Route path="/products" element={<ProductsPage />} />
               <Route path="/counter" element={<Counter />} />
-              <Route path="/product" element={<ProductPage />} />
+              <Route path="/product/:id" element={<ProductPage />} />
             </Routes>
           </BrowserRouter>
         </ThemeProvider>

@@ -11,6 +11,7 @@ function ColorSelect() {
       border="0px"
       // borderRadius="50%"
       height="54px"
+      style={{ border: '0' }}
     >
       {Object.entries(Colors).map(([key, color]) => (
         <option key={key}>{color}</option>

@@ -55,6 +55,7 @@ function SelectionSection() {
           //borderColor="red"
           color="#034C65"
           fontWeight="bold"
+          style={{ border: '3px solid #034C65' }}
         >
           <FaHeart width="46.67px" height="26.7px" paddingRight="35px" cursor="pointer" />
           Add to favorites

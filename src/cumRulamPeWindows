@@ -1,2 +1,2 @@
-yarn add webpack-dev-server
+npm i -g webpack-dev-server
 yarn start
