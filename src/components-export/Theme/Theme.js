@@ -14,7 +14,7 @@ const spacing = {
 const sizing = {
   sizeV01: '4vh',
   sizeV02: '6vh',
-  sizeH01: '50vw',
+  sizeH01: '30vw',
 };
 
 // Inter
@@ -73,6 +73,7 @@ const light = {
   textColor01: '#161616',
   textColor02: '#ffffff',
   textColor03: '#8d8d8d',
+  textColor04: '#474747',
 };
 
 const dark = {};

@@ -5,5 +5,7 @@
   "HELLO_KRAFTER": "Hello, Krafter!",
   "JOIN_US_KRAFTER": "Join us, Krafter!",
   "LOGIN": "Login",
-  "REGISTER": "Register"
+  "LOGIN_TAG": "Don't have an account? Let's craft one!",
+  "REGISTER": "Register",
+  "REGISTER_TAG": "Have an account? Let's login!"
 }

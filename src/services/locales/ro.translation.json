@@ -5,5 +5,7 @@
   "HELLO_KRAFTER": "Bună, meşteşugarule!",
   "JOIN_US_KRAFTER": "Alătură-te, meşteşugarule!",
   "LOGIN": "Autentifică-te",
-  "REGISTER": "Înregistrează-te"
+  "LOGIN_TAG": "Nu ai cont? Hai să meşteşugărim unul!",
+  "REGISTER": "Înregistrează-te",
+  "REGISTER_TAG": "Ai deja cont? Autentifică-te!"
 }
