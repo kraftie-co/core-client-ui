@@ -1,5 +1,11 @@
 {
   "DECREASE": "Decrease",
   "HELLO": "Hello",
-  "INCREASE": "Increase"
+  "INCREASE": "Increase",
+  "HELLO_KRAFTER": "Hello, Krafter!",
+  "JOIN_US_KRAFTER": "Join us, Krafter!",
+  "LOGIN": "Login",
+  "LOGIN_TAG": "Don't have an account? Let's craft one!",
+  "REGISTER": "Register",
+  "REGISTER_TAG": "Have an account? Let's login!"
 }

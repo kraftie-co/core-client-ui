@@ -52,6 +52,8 @@
     ]
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
     "@rebass/forms": "^4.0.6",
     "@reduxjs/toolkit": "^1.9.0",
     "@testing-library/react": "^13.4.0",
@@ -100,6 +102,7 @@
     "react-loading": "^2.0.3",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.3",
+    "react-toastify": "^9.1.1",
     "rebass": "^4.0.7",
     "redux": "^4.2.0",
     "redux-logger": "^3.0.6",

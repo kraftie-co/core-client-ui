@@ -1,5 +1,11 @@
 {
   "DECREASE": "Scade",
   "HELLO": "Bună",
-  "INCREASE": "Creşte"
+  "INCREASE": "Creşte",
+  "HELLO_KRAFTER": "Bună, meşteşugarule!",
+  "JOIN_US_KRAFTER": "Alătură-te, meşteşugarule!",
+  "LOGIN": "Autentifică-te",
+  "LOGIN_TAG": "Nu ai cont? Hai să meşteşugărim unul!",
+  "REGISTER": "Înregistrează-te",
+  "REGISTER_TAG": "Ai deja cont? Autentifică-te!"
 }
