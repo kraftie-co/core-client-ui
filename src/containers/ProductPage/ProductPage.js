@@ -9,6 +9,7 @@ import { Container } from './ProductPage.styled';
 import { bindActionCreators } from 'redux';
 import { productActions } from '../../store/slices/productSlice';
 import { connect } from 'react-redux';
+import LoadingScreen from 'LoadingScreen';
 
 function ProductPage({ product, fetchProduct }) {
   const { id } = useParams();
@@ -24,6 +25,7 @@ function ProductPage({ product, fetchProduct }) {
 
   return (
     <Container>
+      {product === null && <LoadingScreen />}
       <PhotoAndDescriptionSection product={product} />
       <SelectionSection product={product} />
     </Container>
