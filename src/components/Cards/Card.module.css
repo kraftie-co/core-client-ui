@@ -15,6 +15,12 @@
     box-shadow: 5px 5px 5px 5px lightgray;
   }
 
+  .cardContainer:hover{
+    cursor: pointer;
+    box-shadow: 5px 15px 20px 0px darkgray;
+    transform: scale(1.02);
+  }
+
   .cardInformation {
     padding: 13px;
     width: 100%;
