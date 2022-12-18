@@ -1,16 +1,20 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { Flex } from 'rebass';
-import testProduct from 'data/Product.js';
+import PhotoList from 'PhotoList';
 
-function PhotoAndDescriptionSection() {
+function PhotoAndDescriptionSection({ product }) {
   return (
     <Flex flexDirection="column" width="778px">
-      <Flex height="370PX" backgroundColor="#EBFAFE" />
+      <Flex height="370PX" backgroundColor="white">
+        {product && <PhotoList photoList={product?.photoUrls} />}
+      </Flex>
+
       <Flex marginTop="35px" fontWeight="bold" fontSize="20px" font="Inter">
         Description
       </Flex>
       <Flex marginTop="7px" font="Inter" fontSize="16px">
-        {testProduct.description}
+        {product?.description}
       </Flex>
     </Flex>
   );

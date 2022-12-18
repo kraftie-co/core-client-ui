@@ -1,16 +1,16 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { Flex, Text, Button } from 'rebass';
-import testProduct from 'data/Product.js';
 import ColorSelect from 'ColorSelect';
 import SizeSelect from 'SizeSelect';
 import { FaHeart } from 'react-icons/fa';
 
-function SelectionSection() {
+function SelectionSection({ product }) {
   return (
     <Flex minHeight="170px" width="607px" marginLeft="52px" flexDirection="column">
       <Flex>
         <Text font="Inter" fontSize="20px" line-height="24px" fontWeight="bold">
-          {testProduct.name}
+          {product?.name}
         </Text>
       </Flex>
 
@@ -19,7 +19,7 @@ function SelectionSection() {
           Customize
         </Text>
         <Text marginLeft="230px" fontSize="20px">
-          ${testProduct.price}
+          ${product?.price}
         </Text>
       </Flex>
 
