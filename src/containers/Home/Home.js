@@ -7,9 +7,11 @@ function Home() {
   const { t } = useTranslation();
 
   return (
-    <Styled.HomeContainer>
-      <h1>{t('HELLO')}</h1>
-    </Styled.HomeContainer>
+    <>
+      <Styled.HomeContainer>
+        <h1>{t('HELLO')}</h1>
+      </Styled.HomeContainer>
+    </>
   );
 }
 

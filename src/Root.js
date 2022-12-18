@@ -6,13 +6,14 @@ import initTranslations from './services/initTranslations';
 import reportWebVitals from 'report-web-vitals';
 import { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
+// import { Flex } from 'rebass';
 
 import themes from './components-export/Theme';
 import GlobalStyles from './globalStyles';
 import Home from './containers/Home';
-import ProductsPage from './containers/ProductsPage';
 import Counter from './containers/Counter';
-
+import NavBar from './components/NavBar';
+import Main from './containers/Main';
 import { store } from './store';
 
 function Root({ locale, theme }) {
@@ -23,10 +24,12 @@ function Root({ locale, theme }) {
       <Provider store={store}>
         <ThemeProvider theme={theme}>
           <GlobalStyles />
+          <NavBar />
+
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/products" element={<ProductsPage />} />
+              <Route path="/products" element={<Main />} />
               <Route path="/counter" element={<Counter />} />
             </Routes>
           </BrowserRouter>
