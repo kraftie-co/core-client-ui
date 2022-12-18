@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { t } from 'i18next';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-
 import { counterActions } from 'Root/store/slices/counterSlice';
 import { useTheme } from 'styled-components';
 import Typography from '../../components-export/Typography';
