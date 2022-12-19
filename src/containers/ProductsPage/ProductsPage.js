@@ -1,19 +1,21 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Flex } from 'rebass';
+import { PropTypes } from 'prop-types';
 import ProductsCard from '../../components/Cards/Card';
-import axios from 'axios';
+import { bindActionCreators } from 'redux';
+import { productPageActions } from '../../store/slices/productPageSlice';
+import { connect } from 'react-redux';
 
-function ProductsPage() {
-  // const { t } = useTranslation();
-  const [products, setProducts] = useState([]);
+function ProductsPage( {products, fetchListOfProducts}) {
 
-  useEffect(function(){
-    axios
-    .get("https://run.mocky.io/v3/a1f2561e-a8cb-4e91-9ed8-7ed7f6f950e4") //TODO change to actual URL
-    .then(res => setProducts(res.data))
-    .then(error => console.log(error))
-  }, [])
+  console.log(products);
+
+  useEffect(() => {
+    fetchListOfProducts();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
 
   return (
     <Flex height="100%" width="100vw" justifyContent={'space-around'} flexWrap="wrap" flexDirection="row" alignItems={'center'}>
@@ -27,4 +29,17 @@ function ProductsPage() {
   );
 }
 
-export default ProductsPage;
+ProductsPage.propTypes = {
+  products: PropTypes.array,
+  fetchListOfProducts: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  products: state.products
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchListOfProducts: bindActionCreators(productPageActions.fetchListOfProducts, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductsPage);

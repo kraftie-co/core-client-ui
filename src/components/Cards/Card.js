@@ -4,6 +4,7 @@ import { Flex, Image, Button } from 'rebass';
 import PropTypes from 'prop-types';
 import heart_icon from './res/heart_icon.png';
 import bag from './res/bag.png';
+import { addProductToFavourites } from '../../services/api/product.service';
 
 function ProductsCard(props) {
   // const { t } = useTranslation();
@@ -25,7 +26,7 @@ function ProductsCard(props) {
             $ {props.price}
           </div>
           <div className={styles.buttons}>
-            <Button className={styles.button} onClick={addToFavourites}>
+            <Button className={styles.button} onClick={addToFavourites(props.id)}>
               <Image height={20} width={20} color="#FFFFFF" src={heart_icon}></Image>
             </Button>
             <Button marginBottom={10} className={styles.button} onClick={addToBasket}>
@@ -45,8 +46,13 @@ ProductsCard.propTypes = {
   price: PropTypes.number.isRequired
 };
 
-function addToFavourites() {
-  console.log("soon to be implemented");
+function addToFavourites(productId) {
+  let productRequestObject = {
+    id: '',
+    productId: productId
+  };
+
+  addProductToFavourites(productRequestObject);
 }
 
 function addToBasket() {
