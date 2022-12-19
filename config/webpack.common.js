@@ -288,7 +288,7 @@ const config = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
-      'Root': paths.sourcePath,
+      Root: paths.sourcePath,
       'Root-assets': path.resolve(__dirname, '../', 'static/'),
       '../../theme.config$': path.resolve(__dirname, '../', 'src/theme/semantic-ui/theme.config'),
       heading: path.resolve(__dirname, '../', 'src/semantic/heading.less'),

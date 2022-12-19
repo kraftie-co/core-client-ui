@@ -11,6 +11,8 @@ import themes from './components-export/Theme';
 import GlobalStyles from './globalStyles';
 import Home from './containers/Home';
 import ProductsPage from './containers/ProductsPage';
+import ProductPage from './containers/ProductPage';
+import { Login, Register } from './containers/Authentication';
 import Counter from './containers/Counter';
 
 import { store } from './store';
@@ -28,6 +30,9 @@ function Root({ locale, theme }) {
               <Route path="/" element={<Home />} />
               <Route path="/products" element={<ProductsPage />} />
               <Route path="/counter" element={<Counter />} />
+              <Route path="/product/:id" element={<ProductPage />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
             </Routes>
           </BrowserRouter>
         </ThemeProvider>
