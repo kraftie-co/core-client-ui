@@ -30,12 +30,12 @@ function ProductsPage( {products, fetchListOfProducts}) {
 }
 
 ProductsPage.propTypes = {
-  products: PropTypes.array,
+  products: PropTypes.array.isRequired,
   fetchListOfProducts: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  products: state.products
+  products: state.products.products
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -11,7 +11,7 @@ const initialState = {
 }
 
 const productPageSlice = createSlice({
-    name: 'productPage',
+    name: 'products',
     reducers: {},
     initialState,
     extraReducers: (builder) => {
