@@ -9,4 +9,15 @@ function getProductById(id) {
   return http.get(`/product/${id}`);
 }
 
-export { getProductById };
+function getProductsWithDefaultValues() {
+  const PAGE_NUMBER = 1;
+  const PRODUCTS_COUNT = 9;
+  return http.get(`/products?category=&page=${PAGE_NUMBER}&productsCount=${PRODUCTS_COUNT}&sortBy=`);
+}
+
+function addProductToFavourites({props}) {
+  console.log('WOOORKS')
+  return http.post(`/favourites`, props);
+}
+
+export { getProductById, getProductsWithDefaultValues, addProductToFavourites };

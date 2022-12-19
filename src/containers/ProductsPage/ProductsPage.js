@@ -1,18 +1,45 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { useEffect } from 'react';
 import { Flex } from 'rebass';
+import { PropTypes } from 'prop-types';
+import ProductsCard from '../../components/Cards/Card';
+import { bindActionCreators } from 'redux';
+import { productPageActions } from '../../store/slices/productPageSlice';
+import { connect } from 'react-redux';
 
-import * as Styled from './ProductsPage.styled';
+function ProductsPage( {products, fetchListOfProducts}) {
 
-function ProductsPage() {
-  // const { t } = useTranslation();
+  console.log(products);
+
+  useEffect(() => {
+    fetchListOfProducts();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
 
   return (
-    <Flex height="100%" width="100%" paddingLeft="10%" paddingRight="10%" backgroundColor="#EBFAFE">
-      asf
+    <Flex height="100%" width="100vw" justifyContent={'space-around'} flexWrap="wrap" flexDirection="row" alignItems={'center'}>
+      { products.map((product) =>  (
+        <div key={product.id} style={{margin: '4.5em', height: '369px', width: '300px'}} >
+          <ProductsCard key={product.id} {...product}>
+          </ProductsCard>
+        </div>
+      ))}
     </Flex>
   );
 }
 
-export default ProductsPage;
+ProductsPage.propTypes = {
+  products: PropTypes.array,
+  fetchListOfProducts: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  products: state.products
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchListOfProducts: bindActionCreators(productPageActions.fetchListOfProducts, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductsPage);
