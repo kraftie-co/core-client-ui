@@ -15,8 +15,8 @@ function getProductsWithDefaultValues() {
   return http.get(`/products?category=&page=${PAGE_NUMBER}&productsCount=${PRODUCTS_COUNT}&sortBy=`);
 }
 
-function addProductToFavourites({props}) {
-  console.log('WOOORKS')
+function addProductToFavourites({ props }) {
+  console.log('WOOORKS');
   return http.post(`/favourites`, props);
 }
 

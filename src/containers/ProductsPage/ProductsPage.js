@@ -7,22 +7,26 @@ import { bindActionCreators } from 'redux';
 import { productPageActions } from '../../store/slices/productPageSlice';
 import { connect } from 'react-redux';
 
-function ProductsPage( {products, fetchListOfProducts}) {
-
+function ProductsPage({ products, fetchListOfProducts }) {
   console.log(products);
 
   useEffect(() => {
     fetchListOfProducts();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-
   return (
-    <Flex height="100%" width="100vw" justifyContent={'space-around'} flexWrap="wrap" flexDirection="row" alignItems={'center'}>
-      { products.map((product) =>  (
-        <div key={product.id} style={{margin: '4.5em', height: '369px', width: '300px'}} >
-          <ProductsCard key={product.id} {...product}>
-          </ProductsCard>
+    <Flex
+      height="100%"
+      width="100vw"
+      justifyContent={'space-around'}
+      flexWrap="wrap"
+      flexDirection="row"
+      alignItems={'center'}
+    >
+      {products.map((product) => (
+        <div key={product.id} style={{ margin: '4.5em', height: '369px', width: '300px' }}>
+          <ProductsCard key={product.id} {...product}></ProductsCard>
         </div>
       ))}
     </Flex>
@@ -35,7 +39,7 @@ ProductsPage.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  products: state.products.products
+  products: state.products.products,
 });
 
 const mapDispatchToProps = (dispatch) => ({

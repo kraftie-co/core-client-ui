@@ -1,5 +1,5 @@
 import React from 'react';
-import Colors from '../../../data/Colors.js';
+import Colors from '../../../data/Colors';
 import { Select } from '@rebass/forms';
 function ColorSelect() {
   return (

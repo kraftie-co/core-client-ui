@@ -13,18 +13,14 @@ function ProductsCard(props) {
     <div className={styles.cardContainer}>
       <Flex flexWrap="wrap" flexDirection={'row'} alignItems="center" backgroundColor={'#FFFFFF'}>
         <div className={styles.headerImage}>
-          {/* TODO is this THE WAY?*/} 
-          <Image height="100%" width='100%' src={props.image}></Image>
+          {/* TODO is this THE WAY?*/}
+          <Image height="100%" width="100%" src={props.image}></Image>
         </div>
         <div className={styles.cardInformation}>
-          <span style={{overflow: 'hidden', textOverflow: 'ellipsis'}}>
-            {truncateName(props.name)}
-          </span> 
+          <span style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>{truncateName(props.name)}</span>
         </div>
         <div className={styles.priceAndButtons}>
-          <div className={styles.price}>
-            $ {props.price}
-          </div>
+          <div className={styles.price}>$ {props.price}</div>
           <div className={styles.buttons}>
             <Button className={styles.button} onClick={addToFavourites(props.id)}>
               <Image height={20} width={20} color="#FFFFFF" src={heart_icon}></Image>
@@ -43,20 +39,20 @@ ProductsCard.propTypes = {
   id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired
+  price: PropTypes.number.isRequired,
 };
 
 function addToFavourites(productId) {
   let productRequestObject = {
     id: '',
-    productId: productId
+    productId: productId,
   };
 
   addProductToFavourites(productRequestObject);
 }
 
 function addToBasket() {
-  console.log("soon to be implemented");
+  console.log('soon to be implemented');
 }
 
 function truncateName(str) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import Sizes from '../../../data/Sizes.js';
+import Sizes from '../../../data/Sizes';
 import { Select } from '@rebass/forms';
 function SizeSelect() {
   return (
