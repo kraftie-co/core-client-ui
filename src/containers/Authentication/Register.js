@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Input from '../../components-export/Input/Input';
 import Button from '../../components-export/Button/Button';
 import Typography from 'Root/components-export/Typography';
+import { save } from '../../utils/LocalStorage';
 
 function Register() {
   const { t } = useTranslation();
@@ -39,14 +40,33 @@ function Register() {
       );
       return;
     }
-    await axios({
-      method: 'post',
-      url: '/user/12345', // TODO: Change to actual URL
-      data: {
-        username: usernameInput,
-        password: passwordInput,
-      },
-    });
+
+    const data = {
+      username: usernameInput,
+      password: passwordInput,
+      // Test data
+      firstName: 'Dan',
+      lastName: 'Cantor',
+      email: 'danvenu.cant@gma.com',
+      telephone: '07123456789',
+      type: 'vendor',
+      addresses: [],
+    };
+    axios
+      .post('https://kraftie-api.azurewebsites.net/register', data, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'http://localhost:3000',
+          'Access-Control-Request-Method': 'POST',
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+        save('user-token', response.data);
+      })
+      .catch((error) => {
+        toast(error.message);
+      });
   }
 
   function togglePassword() {
@@ -57,8 +77,9 @@ function Register() {
     if (passwordInput !== confirmPasswordInput) {
       return false;
     }
-    // Regex for a password with at least 8 characters, one number and one letter
-    const regularExpression = new RegExp('^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$');
+    //   ^                   Beginning of the string.
+    //  [a-zA-Z0-9]{8,}      Must contain at least 8 from the mentioned characters.
+    const regularExpression = new RegExp('^[a-zA-Z0-9]{8,}');
     return regularExpression.test(passwordInput);
   }
 
