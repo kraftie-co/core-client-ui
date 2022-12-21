@@ -11,6 +11,7 @@ import Input from '../../components-export/Input/Input';
 import Button from '../../components-export/Button/Button';
 import * as Styled from './Login.styled';
 import Typography from '../../components-export/Typography';
+import { save } from '../../utils/LocalStorage';
 
 function Login() {
   const { t } = useTranslation();
@@ -32,14 +33,25 @@ function Login() {
       );
       return;
     }
-    await axios({
-      method: 'post',
-      url: '/user/12345', // TODO: Change to actual URL
-      data: {
-        username: usernameInput,
-        password: passwordInput,
-      },
-    });
+    const data = {
+      username: usernameInput,
+      password: passwordInput,
+    };
+    axios
+      .post('https://kraftie-api.azurewebsites.net/login', data, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'http://localhost:3000',
+          'Access-Control-Request-Method': 'POST',
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+        save('user-token', response.data);
+      })
+      .catch((error) => {
+        toast(error.message);
+      });
   }
 
   function togglePassword() {
@@ -47,8 +59,9 @@ function Login() {
   }
 
   function isPasswordValid() {
-    // Regex for a password with at least 8 characters, one number and one letter
-    const regularExpression = new RegExp('^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$');
+    //   ^                   Beginning of the string.
+    //  [a-zA-Z0-9]{8,}      Must contain at least 8 from the mentioned characters.
+    const regularExpression = new RegExp('^[a-zA-Z0-9]{8,}');
     return regularExpression.test(passwordInput);
   }
 
