@@ -12,6 +12,7 @@ import Button from '../../components-export/Button/Button';
 import * as Styled from './Login.styled';
 import Typography from '../../components-export/Typography';
 import { save } from '../../utils/LocalStorage';
+import getHeaders from '../../utils/headerUtils';
 
 function Login() {
   const { t } = useTranslation();
@@ -38,16 +39,11 @@ function Login() {
       password: passwordInput,
     };
     axios
-      .post('https://kraftie-api.azurewebsites.net/login', data, {
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'http://localhost:3000',
-          'Access-Control-Request-Method': 'POST',
-        },
+      .post('https://kraftie-api.azurewebsites.net/client/login', data, {
+        headers: getHeaders(),
       })
       .then((response) => {
-        console.log(response.data);
-        save('user-token', response.data);
+        save('user-token', response.headers.authorization);
       })
       .catch((error) => {
         toast(error.message);
