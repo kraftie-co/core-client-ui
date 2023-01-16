@@ -1,4 +1,4 @@
-import { load } from 'LocalStorage';
+import { load } from 'localStorage';
 const getHeaders = () => {
   let authorization = load('user-token');
   if (authorization) {

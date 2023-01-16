@@ -11,7 +11,7 @@ import Input from '../../components-export/Input/Input';
 import Button from '../../components-export/Button/Button';
 import * as Styled from './Login.styled';
 import Typography from '../../components-export/Typography';
-import { save } from '../../utils/LocalStorage';
+import { save } from '../../utils/localStorage';
 import getHeaders from '../../utils/headerUtils';
 
 function Login() {

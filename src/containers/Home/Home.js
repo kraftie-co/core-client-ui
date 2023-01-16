@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import * as Styled from './Home.styled';
-import { load } from '../../utils/LocalStorage';
+import { load } from '../../utils/localStorage';
 
 function Home() {
   const { t } = useTranslation();

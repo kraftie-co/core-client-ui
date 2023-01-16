@@ -12,7 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Input from '../../components-export/Input/Input';
 import Button from '../../components-export/Button/Button';
 import Typography from 'Root/components-export/Typography';
-import { save } from '../../utils/LocalStorage';
+import { save } from '../../utils/localStorage';
 import getHeaders from '../../utils/headerUtils';
 
 function Register() {
