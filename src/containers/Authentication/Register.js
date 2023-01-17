@@ -12,13 +12,15 @@ import 'react-toastify/dist/ReactToastify.css';
 import Input from '../../components-export/Input/Input';
 import Button from '../../components-export/Button/Button';
 import Typography from 'Root/components-export/Typography';
-import { save } from '../../utils/LocalStorage';
+import { save } from '../../utils/localStorage';
+import getHeaders from '../../utils/headerUtils';
 
 function Register() {
   const { t } = useTranslation();
   const theme = useTheme();
   const [passwordShown, setPasswordShown] = useState(false);
   const [usernameInput, setUsernameInput] = useState('');
+  const [emailInput, setEmailInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
   const [confirmPasswordInput, setConfirmPasswordInput] = useState('');
   const [arePasswordsValid, setArePasswordsValid] = useState(true);
@@ -44,25 +46,14 @@ function Register() {
     const data = {
       username: usernameInput,
       password: passwordInput,
-      // Test data
-      firstName: 'Dan',
-      lastName: 'Cantor',
-      email: 'danvenu.cant@gma.com',
-      telephone: '07123456789',
-      type: 'vendor',
-      addresses: [],
+      email: emailInput,
     };
     axios
-      .post('https://kraftie-api.azurewebsites.net/register', data, {
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'http://localhost:3000',
-          'Access-Control-Request-Method': 'POST',
-        },
+      .post('https://kraftie-api.azurewebsites.net/client/register', data, {
+        headers: getHeaders(),
       })
       .then((response) => {
-        console.log(response.data);
-        save('user-token', response.data);
+        save('user-token', response.headers.authorization);
       })
       .catch((error) => {
         toast(error.message);
@@ -117,6 +108,8 @@ function Register() {
             width={'30vw'}
             style={{ marginTop: theme.spacing10 }}
           >
+            <p color={theme.textColor04}>Email</p>
+            <Input type={'text'} onInput={(e) => setEmailInput(e.target.value)} />
             <p color={theme.textColor04}>Username</p>
             <Input type={'text'} onInput={(e) => setUsernameInput(e.target.value)} />
             <p color={theme.textColor04}>Password</p>
