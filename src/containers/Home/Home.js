@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useTheme } from 'styled-components';
 import axios from 'axios';
 
@@ -11,14 +11,16 @@ function Home() {
   const theme = useTheme();
   const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    async function fetchProducts() {
-      const productsData = await axios('https://kraftie-api.azurewebsites.net/home/products');
-      setProducts(productsData.data.data);
-      console.log(productsData.data.data);
-    }
-    fetchProducts();
-  }, []);
+  const fetchProducts = async () => {
+    const fetchedProducts = await axios.get('https://kraftie-api.azurewebsites.net/home/products', {
+      headers: {
+        'Access-Control-Allow-Origin': 'http://localhost:3000',
+      },
+    });
+    setProducts(fetchedProducts.data.data);
+  };
+
+  fetchProducts();
 
   return (
     <Styled.HomeContainer>
