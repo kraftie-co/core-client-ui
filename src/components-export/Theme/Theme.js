@@ -70,6 +70,7 @@ const light = {
   ui09: 'rgba(255,255,255,0)',
   ui10: '#ebfafe',
   ui11: 'rgba(11, 104, 132, 0.4)',
+  ui12: '#02394c',
   textColor01: '#161616',
   textColor02: '#ffffff',
   textColor03: '#8d8d8d',
