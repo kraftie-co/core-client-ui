@@ -107,9 +107,9 @@ function ProductsPage({ products, fetchListOfProducts }) {
           <div className={styles.caca}>
           {/* Render pagination buttons */}
             {Array.from({length: Math.ceil(products.length / productsPerPage)}, (_, index) => (
-              <button key={index} onClick={() => paginate(index + 1)}>
+              <Button style={{margin: '15px', cursor: 'pointer'}} className={styles.pageButton} key={index} onClick={() => paginate(index + 1)}>
                 {index + 1}
-              </button>
+              </Button>
             ))}
           </div>
     </Flex>
