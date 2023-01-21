@@ -9,7 +9,7 @@ function getProductById(id) {
 function getProductsWithDefaultValues() {
   const PAGE_NUMBER = 1;
   const PRODUCTS_COUNT = 9;
-  return http.get(`/products?category=&page=${PAGE_NUMBER}&productsCount=${PRODUCTS_COUNT}&sortBy=`);
+  return http.get(`/product?page=${PAGE_NUMBER}&productsCount=${PRODUCTS_COUNT}`);
 }
 
 function addProductToFavourites({ props }) {
