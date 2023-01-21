@@ -1,4 +1,6 @@
 {
+  "ART_AND_COLLECTIBLES": "Art & Collectibles",
+  "CLOTHING_AND_SHOES": "Clothing & Shoes",
   "DECREASE": "Decrease",
   "HELLO": "Hello",
   "INCREASE": "Increase",
@@ -7,5 +9,9 @@
   "LOGIN": "Login",
   "LOGIN_TAG": "Don't have an account? Let's craft one!",
   "REGISTER": "Register",
-  "REGISTER_TAG": "Have an account? Let's login!"
+  "REGISTER_TAG": "Have an account? Let's login!",
+  "HOME_AND_LIVING": "Home & Living",
+  "JEWELRY_AND_ACCESSORIES": "Jewelry & Accessories",
+  "TOYS_AND_ENTERTAINMENT": "Toys & Entertainment",
+  "WEDDING_AND_PARTY": "Wedding & Party"
 }

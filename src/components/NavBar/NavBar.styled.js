@@ -1,15 +1,13 @@
 import styled from 'styled-components';
+import { Flex } from 'rebass';
 
-const NavBarStyled = styled.header`
-  ${({ theme }) => ({ ...theme.body })};
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  background-color: ${({ theme }) => theme.ui08};
-  width: 100vw;
-  height: 6rem;
-  padding: 0 5vw;
-`;
+const Container = styled(Flex).attrs(() => ({
+  width: '100%',
+  flexDirection: 'column',
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  zIndex: 3,
+}))``;
 
-export { NavBarStyled };
+export { Container };
