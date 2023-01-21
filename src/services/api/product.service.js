@@ -11,13 +11,13 @@ function getProductById(id) {
 
 function getProductsWithDefaultValues() {
   const PAGE_NUMBER = 1;
-  const PRODUCTS_COUNT = 9;
-  return http.get(`/products?category=&page=${PAGE_NUMBER}&productsCount=${PRODUCTS_COUNT}&sortBy=`);
+  const PRODUCTS_COUNT = 18;
+  return http.get(`/product`, { params: {page: PAGE_NUMBER, productsCount: PRODUCTS_COUNT}});
 }
 
 function addProductToFavourites({ props }) {
-  console.log('WOOORKS');
-  return http.post(`/favourites`, props);
+  console.log('WOOORKS' + props );
+  // return http.post(`/favourites`, props);
 }
 
 export { getProductById, getProductsWithDefaultValues, addProductToFavourites };
