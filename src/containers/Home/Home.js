@@ -14,7 +14,8 @@ function Home() {
   const fetchProducts = async () => {
     const fetchedProducts = await axios.get('https://kraftie-api.azurewebsites.net/home/products', {
       headers: {
-        'Access-Control-Allow-Origin': 'http://localhost:3000',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST',
       },
     });
     setProducts(fetchedProducts.data.data);
