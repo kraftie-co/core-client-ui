@@ -1,4 +1,6 @@
 {
+  "ART_AND_COLLECTIBLES": "Artă & obiecte de colecție",
+  "CLOTHING_AND_SHOES": "Îmbrăcăminte & încălțăminte",
   "DECREASE": "Scade",
   "HELLO": "Bună",
   "INCREASE": "Creşte",
@@ -7,5 +9,9 @@
   "LOGIN": "Autentifică-te",
   "LOGIN_TAG": "Nu ai cont? Hai să meşteşugărim unul!",
   "REGISTER": "Înregistrează-te",
-  "REGISTER_TAG": "Ai deja cont? Autentifică-te!"
+  "REGISTER_TAG": "Ai deja cont? Autentifică-te!",
+  "HOME_AND_LIVING": "Acasă & stil de viață",
+  "JEWELRY_AND_ACCESSORIES": "Bijuterii & accesorii",
+  "TOYS_AND_ENTERTAINMENT": "Jucării & divertisment",
+  "WEDDING_AND_PARTY": "Nunți & petreceri"
 }

@@ -3,7 +3,7 @@ import { useTheme } from 'styled-components';
 import axios from 'axios';
 
 import * as Styled from './Home.styled';
-import NavBar from '../../components/NavBar/NavBar';
+import NavBar from '../../components/NavBar/index';
 import ProductsCard from '../../components/Cards/Card';
 import { CheckBox } from '../../components-export/CheckBox/CheckBox';
 
