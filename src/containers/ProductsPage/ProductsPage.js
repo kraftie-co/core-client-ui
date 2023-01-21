@@ -16,7 +16,7 @@ import filter_icon from './res/filter_icon.png';
 
 function ProductsPage({ products, fetchListOfProducts }) {
   const [showFilterOptions, setIsFilterShown] = useState(false);
-  const [priceRange, setPriceRange] = useState('Under $50');
+  const [priceRange, setPriceRange] = useState('ALL');
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(9);
   
