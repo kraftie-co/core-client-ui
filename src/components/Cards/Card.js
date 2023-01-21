@@ -1,4 +1,5 @@
 import * as React from 'react';
+/* eslint-disable react/prop-types */
 import styles from 'Card.module.css';
 import { Flex, Image, Button } from 'rebass';
 import PropTypes from 'prop-types';
@@ -14,7 +15,7 @@ function ProductsCard(props) {
       <Flex flexWrap="wrap" flexDirection={'row'} alignItems="center" backgroundColor={'#FFFFFF'}>
         <div className={styles.headerImage}>
           {/* TODO is this THE WAY?*/}
-          <Image height="100%" width="100%" src={props.image}></Image>
+          <Image height="100%" width="100%" src={props.photoUrls.length != 0 ? props.photoUrls[0].pictureUrl : ''}></Image>
         </div>
         <div className={styles.cardInformation}>
           <span style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>{truncateName(props.name)}</span>
@@ -37,7 +38,8 @@ function ProductsCard(props) {
 
 ProductsCard.propTypes = {
   id: PropTypes.number.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
+  // image.photoUrls = PropTypes.array,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
 };
