@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import * as React from 'react';
 import styles from 'Card.module.css';
 import { Flex, Image, Button } from 'rebass';
@@ -5,16 +6,16 @@ import PropTypes from 'prop-types';
 import heart_icon from './res/heart_icon.png';
 import bag from './res/bag.png';
 import { addProductToFavourites } from '../../services/api/product.service';
-
+import { useNavigate } from 'react-router-dom';
 function ProductsCard(props) {
   // const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
-    <div className={styles.cardContainer}>
+    <div className={styles.cardContainer} onClick={() => navigate(`/product/${props.id}`)}>
       <Flex flexWrap="wrap" flexDirection={'row'} alignItems="center" backgroundColor={'#FFFFFF'}>
         <div className={styles.headerImage}>
-          {/* TODO is this THE WAY?*/}
-          <Image height="100%" width="100%" src={props.image}></Image>
+          <Image height="100%" width="100%" src={props.photoUrls?.[0].pictureUrl}></Image>
         </div>
         <div className={styles.cardInformation}>
           <span style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>{truncateName(props.name)}</span>
@@ -22,10 +23,10 @@ function ProductsCard(props) {
         <div className={styles.priceAndButtons}>
           <div className={styles.price}>$ {props.price}</div>
           <div className={styles.buttons}>
-            <Button className={styles.button} onClick={addToFavourites(props.id)}>
+            <Button className={styles.button} onClick={() => addToFavourites(props.id)}>
               <Image height={20} width={20} color="#FFFFFF" src={heart_icon}></Image>
             </Button>
-            <Button marginBottom={10} className={styles.button} onClick={addToBasket}>
+            <Button marginBottom={10} className={styles.button} onClick={() => addToBasket(props.id)}>
               <Image height={37} width={37} color="#FFFFFF" src={bag}></Image>
             </Button>
           </div>

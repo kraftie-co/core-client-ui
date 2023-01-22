@@ -16,16 +16,9 @@ function ProductsPage({ products, fetchListOfProducts }) {
   }, []);
 
   return (
-    <Flex
-      height="100%"
-      width="100vw"
-      justifyContent={'space-around'}
-      flexWrap="wrap"
-      flexDirection="row"
-      alignItems={'center'}
-    >
+    <Flex height="100%" width="100vw" justifyContent={'space-around'} flexWrap="wrap" flexDirection="row">
       {products.map((product) => (
-        <div key={product.id} style={{ margin: '4.5em', height: '369px', width: '300px' }}>
+        <div key={product.id} style={{ margin: '20px', height: '369px', width: '300px' }}>
           <ProductsCard key={product.id} {...product}></ProductsCard>
         </div>
       ))}
